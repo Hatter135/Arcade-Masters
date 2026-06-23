@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <video autoplay muted loop class="retro-background-video">
+        <source src="Videos/Retro Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    
+    <header class="navbar">
+        <h1>Arcade Masters
+            <span class="nav-subtitle">Home Page</span>
+        </h1>
+
+            <div class="nav-right">
+                <nav>
+                    <a href="index.html" class="nav-buttons">Home</a>
+                    <a href="Games.html" class="nav-buttons nav-buttons-active">Games</a>
+                </nav> 
+            
+            </div>
+
+    </header>
+
+    <h3>Arcade Games</h3>
+    <p>Explore the nostalgic world of classic arcade games!</p>
+
+    <section class="hot-games">
+    <h2>Hot Games:</h2>
+
+    
+    <a href="Snake.html" class="hot-game-link">
+    <div id="Snake">
+    <img src="Images/Snake.png" alt="Snake Game" class="game-image">
+    </div>
+    </a>
+    
+
+    <h3>Snake</h3>
+    <p>Snake is a classic arcade game where players control a snake that grows in length as it eats food, while avoiding collisions with itself and the walls.</p>
+    
+
+    
+    <a href="Tetris.html" class="hot-game-link">
+    <div id="Tetris">
+    <img src="Images/Tetris.png" alt="Tetris Game" class="game-image">
+    </div>
+    </a>
+    
+
+    <h3>Tetris</h3>
+    <p>Tetris is a classic puzzle game where players arrange falling blocks to complete lines.</p>
+
+    </section>
+    
+
+
+<script>
+    const music = new Audio('Music/Midnight Motorists Theme.mp3');
+    music.loop = true;
+    music.play();
+</script>
+</body>
+</html>
