@@ -149,6 +149,16 @@ body {
     transition: transform 0.3s ease;
 }
 
+#Block{
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+#Block:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 
 .tooltip {
     position: absolute;
