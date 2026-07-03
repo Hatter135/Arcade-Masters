@@ -181,17 +181,18 @@ body {
     z-index: 10;
 }
 
-.hot-games:hover .tooltip {
+.hot-game:hover .tooltip {
     opacity: 1;
     visibility: visible;
 }
 
 
 .hot-game {
+    position: relative;
     max-width: 600px;
-    margin: 0px auto;
+    margin: 0 auto 20px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0,0,0,.6);
     border-radius: 10px;
     color: white;
 }
