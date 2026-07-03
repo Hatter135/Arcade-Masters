@@ -1,28 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <title>Basic Snake HTML Game</title>
   <meta charset="UTF-8">
-  <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
 
-  body {
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  canvas {
-    border: 1px solid white;
-  }
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      color: white;
+      margin: 0 0 10px;
+      text-transform: uppercase;
+    }
+
+    #games-link {
+      margin-bottom: 20px;
+      color: #00aaff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: transform 0.2s, text-decoration 0.2s;
+    }
+
+    #games-link:hover {
+      text-decoration: underline;
+      transform: scale(1.2);
+    }
+
+    canvas {
+      border: 1px solid white;
+    }
   </style>
 </head>
+
 <body>
-<canvas width="400" height="400" id="game"></canvas>
+
+<div class="game-container">
+  <h2>Snake:</h2>
+
+  <a href="Games.html" id="games-link">Back to Games</a>
+
+  <canvas width="640" height="480" id="game"></canvas>
+</div>
+
+</body>
+</html>
+
 <script>
 
     const gameover = new Audio('Music/Snake/GameOver.mp3');
