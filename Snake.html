@@ -141,40 +141,39 @@ context.fillText('Score: ' + score, 10, 25);
 if (gameOver) {
 
   context.fillStyle = 'rgba(0,0,0,0.75)';
-  context.fillRect(0, 150, 400, 100);
+context.fillStyle = 'rgba(0,0,0,0.75)';
+context.fillRect(0, canvas.height / 2 - 50, canvas.width, 100);
 
-  context.fillStyle = 'white';
-  context.font = '30px monospace';
-  context.textAlign = 'center';
+context.fillStyle = 'white';
+context.font = '30px monospace';
+context.textAlign = 'center';
 
-  context.fillText('GAME OVER', 200, 185);
+context.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 10);
 
-  context.font = '18px monospace';
-  context.fillText('Score: ' + score, 200, 220);
-  context.fillText('Press R to Restart', 200, 250);
+context.font = '18px monospace';
+context.fillText('Score: ' + score, canvas.width / 2, canvas.height / 2 + 20);
+context.fillText('Press R to Restart', canvas.width / 2, canvas.height / 2 + 50);
 
   return;
 }
 
-  // move snake by it's velocity
-  snake.x += snake.dx;
-  snake.y += snake.dy;
+let nextX = snake.x + snake.dx;
+let nextY = snake.y + snake.dy;
 
-  // wrap snake position horizontally on edge of screen
-  if (snake.x < 0) {
-    snake.x = canvas.width - grid;
-  }
-  else if (snake.x >= canvas.width) {
-    snake.x = 0;
-  }
+// wall collision = game over
+if (
+  nextX < 0 ||
+  nextX >= canvas.width ||
+  nextY < 0 ||
+  nextY >= canvas.height
+) {
+  gameOver = true;
+  gameover.play();
+  return;
+}
 
-  // wrap snake position vertically on edge of screen
-  if (snake.y < 0) {
-    snake.y = canvas.height - grid;
-  }
-  else if (snake.y >= canvas.height) {
-    snake.y = 0;
-  }
+snake.x = nextX;
+snake.y = nextY;
 
   // keep track of where snake has been. front of the array is always the head
   snake.cells.unshift({x: snake.x, y: snake.y});
@@ -211,6 +210,7 @@ if (cell.x === apple.x && cell.y === apple.y) {
 // snake occupies same space as a body part
 if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
   gameOver = true;
+  gameover.volume = 0.3;
   gameover.play();
 }
     }
